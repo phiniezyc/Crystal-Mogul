@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2>Crystals Collector!</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="jumbotron">
+            <p>You will be given a random number at the start of the game.</p>
+            <p>There are four crystals below. By clicking on a crystal you will add a specific amount of polish to your total score.</p>
+            <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number</p>
+            <p>The value of each crystal is hidden from you until you click on it.</p>
+            <p>Each time when the game starts, the game will change the values of each crystal.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="panel panel-default col-4 col-sm-4 col-md-4 col-lg-4" id="targetScoreNumber">
+            <div class="panel-body ">
+                39
+            </div>
+        </div>
+        <div class="panel panel-default col-4 col-sm-4 col-md-4 col-lg-4" id="winLossCounterSection">
+            <div class="panel-body">
+                <p id="wins">Wins:&emsp;0</p>
+                <p>Losses:&emsp;0</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="btn-group">
+        <button type="button" id="gem1" class="btn btn-primary gemButtons ">Apple</button>
+        <button type="button" id="gem2" class="btn btn-primary gemButtons ">Samsung</button>
+        <button type="button" id="gem3"  class="btn btn-primary gemButtons">Sony</button>
+        <button type="button" id="gem4" class="btn btn-primary gemButtons">Ruby</button>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Your total score is:
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="jumbotron" id="userTotalScoreSection">
+            0
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
+
+

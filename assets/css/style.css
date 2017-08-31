@@ -1,0 +1,40 @@
+
+.gemButtons {
+    height: 100px;
+    width:100px;
+    margin: 10px;
+}
+
+#targetScoreNumber {
+    height:150px;
+    float: left;
+    text-align: left;
+    font-size: 15px;
+}
+
+#winLossCounterSection {
+    height: 150px;
+    float: left;
+    margin-left: 20px;
+}
+
+#userTotalScoreSection {
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    font-size: 50px;
+}
+
+
+
+
+
+@media only screen and (max-width: 466px) {
+    .gemButtons {
+        height: 85px;
+        width: 85px;
+        margin: 5px;
+
+    }
+}
+
