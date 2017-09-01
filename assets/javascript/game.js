@@ -22,77 +22,89 @@ var losses = 0;
 // Functions =============================================
 
 
-//function generateRandomPointsForButtons() {
+function generateRandomPointsForButtons() {
     /* Each button has a preassigned index position, so it just gets whatever random number is in that position */
     for (var i = 0; i < 4; i++) {
-        fourRandomPointsToBeAssigned.push(Math.floor(Math.random() * 12) + 1)
+        fourRandomPointsToBeAssigned.push(Math.floor(Math.random() * 12) + 1);
             gem1PointValue = fourRandomPointsToBeAssigned[0];
             gem2PointValue = fourRandomPointsToBeAssigned[1];
             gem3PointValue = fourRandomPointsToBeAssigned[2];
             gem4PointValue = fourRandomPointsToBeAssigned[3];
-    };
+    }
     console.log(fourRandomPointsToBeAssigned);
     console.log(gem1PointValue);
-//}
+}
 
 function generateTargetScore() {
-    var targetScoreNumber = (Math.floor(Math.random() * 120) + 19);
+    targetScoreNumber = (Math.floor(Math.random() * 120) + 19);
     document.getElementById("targetScoreNumber").innerHTML = targetScoreNumber;
 }
 
 function addButtonClickToUserPoints() {
-    gem1 = document.getElementById("gem1")
-    gem1.onclick = function() {
-        userPoints += gem1PointValue;
-        console.log("Testing", userPoints);
-        document.getElementById("userTotalScoreSection").innerHTML = userPoints;
-    };
+        gem1 = document.getElementById("gem1");
+        gem1.onclick = function () {
+            userPoints += gem1PointValue;
+            console.log("Testing", userPoints);
+            evaluateRound();
+            document.getElementById("userTotalScoreSection").innerHTML = userPoints;
 
-    gem2 = document.getElementById("gem2")
-    gem2.onclick = function() {
-        userPoints += gem2PointValue;
-        console.log("Testing", userPoints);
-        document.getElementById("userTotalScoreSection").innerHTML = userPoints;
-    };
 
-    gem3 = document.getElementById("gem3")
-    gem3.onclick = function() {
-        userPoints += gem3PointValue;
-        console.log("Testing", userPoints);
-        document.getElementById("userTotalScoreSection").innerHTML = userPoints;
-    };
+        };
 
-    gem4 = document.getElementById("gem4")
-    gem4.onclick = function() {
-        userPoints += gem4PointValue;
-        console.log("Testing", userPoints);
-        document.getElementById("userTotalScoreSection").innerHTML = userPoints;
-    };
+        gem2 = document.getElementById("gem2");
+        gem2.onclick = function () {
+            userPoints += gem2PointValue;
+            console.log("Testing", userPoints);
+            evaluateRound();
+            document.getElementById("userTotalScoreSection").innerHTML = userPoints;
 
-    //console.log(userPoints);
+        };
+
+        gem3 = document.getElementById("gem3");
+        gem3.onclick = function () {
+            userPoints += gem3PointValue;
+            console.log("Testing", userPoints);
+            evaluateRound();
+            document.getElementById("userTotalScoreSection").innerHTML = userPoints;
+        };
+
+        gem4 = document.getElementById("gem4");
+        gem4.onclick = function () {
+            userPoints += gem4PointValue;
+            console.log("Testing", userPoints);
+            evaluateRound();
+            document.getElementById("userTotalScoreSection").innerHTML = userPoints;
+        };
 }
 
 
-// Doesn't looke like userPoints is updating and not sure why...
-function roundComplete() {
+
+function evaluateRound() {
     if (userPoints === targetScoreNumber) {
         wins++;
         document.getElementById("wins").innerHTML = "Wins: " + wins;
-    } else if (userPoints === targetScoreNumber) {
+        console.log("Summer");
+        reset();
+    } else if (userPoints > targetScoreNumber) {
         losses++;
         document.getElementById("losses").innerHTML = "Losses: " + losses;
-
-    } else {
-        console.log(userPoints);
+        reset();
     }
 };
 
+function reset() {
+    userPoints = 0;
+    generateTargetScore();
+    generateRandomPointsForButtons();
+
+}
+
+
 // App Mechanics =============================================
-
+generateRandomPointsForButtons();
 addButtonClickToUserPoints();
-generateTargetScore();
-roundComplete();
-
+generateTargetScore()
+evaluateRound();
 
 
 
