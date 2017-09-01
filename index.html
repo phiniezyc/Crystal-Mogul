@@ -12,11 +12,11 @@
 
 <body>
 
-<div class="container">
+<div class="container" >
     <div class="row">
-        <div class="panel panel-default">
+        <div class="panel panel-default panelColor">
             <div class="panel-body">
-                <h2>Crystals Collector!</h2>
+                <h1>Crystals Collector!</h1>
             </div>
         </div>
     </div>
@@ -36,13 +36,14 @@
 
 <div class="container">
     <div class="row justify-content-start">
-        <div class="panel panel-default col-4 col-sm-4 col-md-4 col-lg-4" id="targetScoreNumber">
+        <div class="panel panel-default col-4 col-sm-4 col-md-4 col-lg-4 scorePanels" id="targetScoreNumber">
             <div class="panel-body ">
                 39
             </div>
         </div>
-        <div class="panel panel-default col-4 col-sm-4 col-md-4 col-lg-4" id="winLossCounterSection">
+        <div class="panel panel-default col-4 col-sm-4 col-md-4 col-lg-4 scorePanels" id="winLossCounterSection">
             <div class="panel-body" >
+                <p id="postRoundSentence" > </p>
                 <p id="wins">Wins:&emsp;0</p>
                 <p id="losses">Losses:&emsp;0</p>
             </div>
@@ -52,15 +53,15 @@
 
 <div class="container">
     <div class="btn-group">
-        <button type="button" id="gem1" class="btn btn-primary gemButtons ">Apple</button>
-        <button type="button" id="gem2" class="btn btn-primary gemButtons ">Samsung</button>
-        <button type="button" id="gem3"  class="btn btn-primary gemButtons">Sony</button>
-        <button type="button" id="gem4" class="btn btn-primary gemButtons">Ruby</button>
+        <button type="button" id="gem1" class="btn btn-primary gemButtons "></button>
+        <button type="button" id="gem2" class="btn btn-primary gemButtons "></button>
+        <button type="button" id="gem3"  class="btn btn-primary gemButtons"></button>
+        <button type="button" id="gem4" class="btn btn-primary gemButtons"></button>
     </div>
 </div>
 <div class="container">
     <div class="row">
-        <div class="panel panel-default">
+        <div class="panel panel-default panelColor" id="totalScoreHeading">
             <div class="panel-body">
                 Your total score is:
             </div>
@@ -70,7 +71,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="jumbotron" id="userTotalScoreSection">
+        <div class="jumbotron scorePanels" id="userTotalScoreSection">
             0
         </div>
     </div>

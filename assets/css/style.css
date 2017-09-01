@@ -1,28 +1,71 @@
 
+body {
+    background-image: url("../images/crystalgamebackground.jpeg");
+}
+
+.panelColor {
+    background: lightblue;
+}
+.scorePanels {
+    background: lightblue;
+}
+
 .gemButtons {
     height: 100px;
     width:100px;
     margin: 10px;
+    background: lightblue;
 }
 
 #targetScoreNumber {
     height:150px;
     float: left;
-    text-align: left;
-    font-size: 15px;
+    font-size: 70px;
+    text-align: center;
+    padding-top: 15px;
 }
 
 #winLossCounterSection {
     height: 150px;
     float: left;
     margin-left: 20px;
+    font-size: 30px;
 }
 
 #userTotalScoreSection {
     width: 400px;
     height: 150px;
     text-align: center;
-    font-size: 50px;
+    font-size: 90px;
+    padding-top: 12px;
+}
+
+#totalScoreHeading {
+    font-size: 20px;
+}
+
+#gem1 {
+    background-image: url("../images/crystal1.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+#gem2 {
+    background-image: url("../images/crystal2.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+#gem3 {
+    background-image: url("../images/crystal3.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+#gem4 {
+    background-image: url("../images/crystal4.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
 }
 
 
