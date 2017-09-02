@@ -2,12 +2,11 @@
 /* We get our random numbers by pushing random numbers between 1 and 12 into an array 4 times.*/
 var fourRandomPointsToBeAssigned = [];
 var targetScoreNumber = 0;
-
+//How many points each button gets/round
 var gem1PointValue = 0;
 var gem2PointValue = 0;
 var gem3PointValue = 0;
 var gem4PointValue = 0;
-
 //How many times each button pushed total
 var gem1 = 0;
 var gem2 = 0;
@@ -30,62 +29,59 @@ function generateRandomPointsForButtons() {
         gem4PointValue = fourRandomPointsToBeAssigned[3];
     }
     console.log(fourRandomPointsToBeAssigned);
-    console.log(gem1PointValue);
 }
 
 function generateTargetScore() {
     targetScoreNumber = (Math.floor(Math.random() * 120) + 19);
-    document.getElementById("targetScoreNumber").innerHTML = targetScoreNumber;
+    $("#targetScoreNumber").html(targetScoreNumber);
 }
 
 function addButtonClickToUserPoints() {
-    gem1 = document.getElementById("gem1");
-    gem1.onclick = function () {
+    $("#gem1").click(function () {
         userPoints += gem1PointValue;
-        console.log("Testing", userPoints);
         evaluateRound();
-        document.getElementById("userTotalScoreSection").innerHTML = userPoints;
-    };
-    gem2 = document.getElementById("gem2");
-    gem2.onclick = function () {
+        $("#userTotalScoreSection").html(userPoints);
+    });
+
+    $("#gem2").click(function () {
         userPoints += gem2PointValue;
-        console.log("Testing", userPoints);
         evaluateRound();
-        document.getElementById("userTotalScoreSection").innerHTML = userPoints;
-    };
-    gem3 = document.getElementById("gem3");
-    gem3.onclick = function () {
+        $("#userTotalScoreSection").html(userPoints);
+    });
+    $("#gem3").click(function () {
         userPoints += gem3PointValue;
-        console.log("Testing", userPoints);
         evaluateRound();
-        document.getElementById("userTotalScoreSection").innerHTML = userPoints;
-    };
-    gem4 = document.getElementById("gem4");
-    gem4.onclick = function () {
+        $("#userTotalScoreSection").html(userPoints);
+    });
+    $("#gem4").click(function () {
         userPoints += gem4PointValue;
-        console.log("Testing", userPoints);
         evaluateRound();
-        document.getElementById("userTotalScoreSection").innerHTML = userPoints;
-    };
+        $("#userTotalScoreSection").html(userPoints);
+    });
 }
 
 function evaluateRound() {
     if (userPoints === targetScoreNumber) {
         wins++;
-        document.getElementById("wins").innerHTML = "Wins: " + wins;
         reset();
+        $("#wins").html("Wins: " + wins);
     } else if (userPoints > targetScoreNumber) {
         losses++;
-        document.getElementById("losses").innerHTML = "Losses: " + losses;
+        $("#losses").html("Losses: " + losses);
         reset();
     }
-};
+}
 
 function reset() {
     userPoints = 0;
     generateTargetScore();
     generateRandomPointsForButtons();
 }
+
+// JQuery ========================================================
+$(document).ready(function () {
+    // Is this necessary since I linked instead of directly in html?
+});
 
 // App Mechanics =============================================
 
